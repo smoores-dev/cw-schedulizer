@@ -1,0 +1,178 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+/* CSS Document */
+
+@mixin box_sizing {
+  -maz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face { font-family: Bellerose; src: url(../fonts/Bellerose.ttf); }
+@font-face { font-family: Bigmouth; src: url(../fonts/Bigmouth-Regular.ttf); }
+@font-face { font-family: Bigmouth-Bold; src: url(../fonts/Bigmouth-Bold.ttf); }
+@font-face { font-family: Engel; src: url(../fonts/EngelLight_ltd.ttf); }
+
+h1, h2 {
+  font-family:Bellerose;
+}
+
+hr {
+  background-color: white;
+}
+
+body {
+  /*background: url(../images/background.jpg);*/
+  background-color: #6B0000;
+}
+
+#container {
+  font-family: Engel;
+  /*background-color:#EBC3AB;*/
+  width:1200px;
+  font-size:medium;
+  margin:0px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+header {
+  background-color:#F1F1F1;
+  width:1000px;
+  margin:0px;
+  margin-right:auto;
+  margin-left:auto;
+  padding-bottom:5px;
+  border-left: #CCC solid thick;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 8px 8px 8px black;
+}
+
+header img {
+  margin-top:20px;
+  width:50%;
+  margin-right: 250px;
+  margin-left: 250px;
+  padding-bottom: 20px;
+}
+
+a {
+  text-decoration:none;
+  color:black;
+}
+
+nav {
+  width: 70%;
+  margin-right: auto;
+  margin-left: 180px;
+  font-family:Engel;
+}
+
+nav ul {
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  padding: 2px;
+  margin: 18px;
+}
+
+nav ul li a:hover {
+  color:white;
+}
+
+#content {
+  background-image:url(../images/CW-Background.png);
+  background-repeat:no-repeat;
+  background-color:#F1F1F1;
+    background-position:center top;
+  padding-bottom: 150px;
+  width:1000px;
+  padding-top:20px;
+  margin-right:auto;
+  margin-left:auto;
+  border-left: #CCC solid thick;
+  box-shadow: 8px 8px 8px black;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+    /*height: 950px;*/
+}
+
+#mission {
+  margin-right:auto;
+  margin-left:100px;
+  font-size:175%;
+}
+
+#goal {
+  margin-right:150px;
+  margin-left:600px;
+  font-size:175%;
+}
+
+.infoBox {
+  display:table;
+  border-spacing: 30px;
+  border: #666 thin solid;
+    background-color:white;
+  background-color:rgba(255,255,255,0.75);
+  margin-right: 40px;
+  margin-left: 40px;
+  font-size:110%;
+}
+
+#first {
+  margin-right:250px;
+}
+
+#second {
+  margin-left:250px;
+}
+
+#how {
+  width:115px;
+  margin-right:auto;
+  margin-left:auto;
+  border-bottom:medium black solid;
+}
+
+aside {
+  float: right;
+  width: 250px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:40px;
+  padding: 30px;
+  padding-bottom:50px;
+  padding-top:0;
+  background-color:rgba(255,255,255,0.95);
+  border: #666 thin solid;
+  font-family:Engel;
+  box-shadow: 3px 3px 3px #252525;
+  p {
+    font-size:120%;
+  }
+  a {
+    font-weight:bold;
+  }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
