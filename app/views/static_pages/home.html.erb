@@ -1,2 +1,7 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, 'Cayugas Watchers') %>
+<% provide(:style, 'index.css.scss') %>
+<%= image_tag("banner.jpg", alt: "Keep the party going!") %>
+<div id="cloud">
+  <h1>What are we?</h1>
+  <%= image_tag("word_cloud.png", size: "850x370") %>
+</div>

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+h1 { margin-left: 30px; margin-bottom: 0px }
+
+#accordion { 
+  padding: 10px; 
+  width: 700px;
+}
+
+#accordion h3 {
+  background-color: rgba(255,255,255,0.85);
+  border: solid medium #CCC;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+#accordion div {
+  background-color: rgba(255,255,255,0.85);
+  border: solid medium #CCC;
+  border-top: none;
+  padding: 10px;
+}
+
+#accordion a { font-weight: bold; }
+
+#request {
+  margin-right:auto;
+  margin-left:100px;
+  font-size:175%;
+}
+
+#table {
+  display: table;
+  border-spacing:40px;
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.tableRow {
+  display: table-row;
+  height: 250px;
+}
+
+.tableCell {
+  vertical-align: top;
+  display: table-cell;
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+  border: #666 thin solid;
+  background-color:rgba(100,100,100,0.15);
+  padding:5px;
+  img {
+    padding:5px;
+    border: #666 thin solid;
+    background-color: white;
+  }
+  h2, h3 {
+    margin:5px;
+    text-align:center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.empty {
+  background-color:transparent;
+  border:none;
+}
+
+#meet {
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+}

@@ -16,6 +16,17 @@
 @font-face { font-family: Bigmouth-Bold; src: url(../fonts/Bigmouth-Bold.ttf); }
 @font-face { font-family: Engel; src: url(../fonts/EngelLight_ltd.ttf); }
 
+#login {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  width: 200px;
+  background-color: white;
+  border: thin black solid;
+  padding: 20px;
+  box-shadow: 2px 2px 2px #252525;
+}
+
 h1, h2 {
   font-family:Bellerose;
 }
@@ -50,14 +61,13 @@ header {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   box-shadow: 8px 8px 8px black;
-}
-
-header img {
-  margin-top:20px;
-  width:50%;
-  margin-right: 250px;
-  margin-left: 250px;
-  padding-bottom: 20px;
+  img {
+    margin-top:20px;
+    width:50%;
+    margin-right: 250px;
+    margin-left: 250px;
+    padding-bottom: 20px;
+  }
 }
 
 a {
@@ -69,26 +79,22 @@ nav {
   width: 70%;
   margin-right: auto;
   margin-left: 180px;
-  font-family:Engel;
-}
-
-nav ul {
-  list-style: none;
-  position: relative;
-  display: inline-table;
-}
-
-nav ul li {
-  float: left;
-}
-
-nav ul li a {
-  padding: 2px;
-  margin: 18px;
-}
-
-nav ul li a:hover {
-  color:white;
+  font-family: Engel;
+  ul {
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    li {
+      float: left;
+      a {
+        padding: 2px;
+        margin: 18px;
+        &:hover {
+          color:white;
+        }
+      }
+    }
+  }
 }
 
 #content {
@@ -139,13 +145,6 @@ nav ul li a:hover {
   margin-left:250px;
 }
 
-#how {
-  width:115px;
-  margin-right:auto;
-  margin-left:auto;
-  border-bottom:medium black solid;
-}
-
 aside {
   float: right;
   width: 250px;
@@ -157,7 +156,7 @@ aside {
   padding-top:0;
   background-color:rgba(255,255,255,0.95);
   border: #666 thin solid;
-  font-family:Engel;
+  font-family: Engel;
   box-shadow: 3px 3px 3px #252525;
   p {
     font-size:120%;
