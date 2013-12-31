@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231032848) do
+ActiveRecord::Schema.define(version: 20131231220849) do
+
+  create_table "employees", force: true do |t|
+    t.string   "name"
+    t.string   "netID"
+    t.string   "password",              default: "watchers123"
+    t.string   "password_confirmation", default: "watchers123"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.string   "string"
+    t.boolean  "exec",                  default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employees", ["netID"], name: "index_employees_on_netID", unique: true
+  add_index "employees", ["remember_token"], name: "index_employees_on_remember_token"
 
   create_table "users", force: true do |t|
     t.string   "name"

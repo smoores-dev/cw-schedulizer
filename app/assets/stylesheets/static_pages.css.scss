@@ -11,10 +11,21 @@
   box-sizing: border-box;
 }
 
-@font-face { font-family: Bellerose; src: url(../fonts/Bellerose.ttf); }
-@font-face { font-family: Bigmouth; src: url(../fonts/Bigmouth-Regular.ttf); }
-@font-face { font-family: Bigmouth-Bold; src: url(../fonts/Bigmouth-Bold.ttf); }
-@font-face { font-family: Engel; src: url(../fonts/EngelLight_ltd.ttf); }
+@font-face { 
+  font-family: Bellerose; 
+  src: asset-url(Bellerose); 
+}
+@font-face { 
+  font-family: Bigmouth; 
+  src: asset-url(Bigmouth-Regular); 
+}
+@font-face { 
+  font-family: Bigmouth-Bold; 
+  src: asset-url(Bigmouth-Bold); 
+}
+@font-face { font-family: Engel; 
+  src: asset-url(EngelLight_ltd); 
+}
 
 #login {
   position: absolute;

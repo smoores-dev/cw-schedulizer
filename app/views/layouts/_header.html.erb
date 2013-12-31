@@ -1,8 +1,17 @@
 <header>
   <%= image_tag("CW Logo.png") %>
-  <!-- if not logged in -->
   <div id="login">
-    Already an employee? <%= link_to "Login here", "#" %>
+    <% unless signed_in? %>
+      Already an employee? <%= link_to "Login here", signin_path %>
+    <% else %>
+      <ul>
+        <li><%= link_to "Logout", signout_path, method: "delete" %></li>
+        <% if current_employee.exec? %>
+          <li><%= link_to "Add employee", new_employee_path %></li>
+          <li><%= link_to "View all employees", employees_path %></li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
   <nav>
     <hr style='margin-top: -1px; width:90%; color: #990000;'>

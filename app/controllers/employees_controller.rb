@@ -1,0 +1,55 @@
+class EmployeesController < ApplicationController
+  before_action :signed_in_employee
+  before_action :correct_employee, only: [:edit, :update]
+  before_action :exec, only: [:index, :new, :destroy]
+
+  def index
+    @employees = Employee.paginate(page: params[:page])
+  end
+
+  def new
+    @employee = Employee.new
+  end
+
+  def create
+    @employee = Employee.new(employee_params)
+    if @employee.save
+      flash[:success] = "Employee added to the system."
+    end
+    render 'new'
+  end
+
+  def edit
+  end
+
+  def update
+    if @employee.update_attributes(employee_params)
+      flash[:success] = "Password updated"
+    end
+    redirect_to 'edit'
+  end
+
+  def destroy
+    Employee.find(params[:id]).destroy
+    flash[:success] = "Employee removed from system."
+    redirect_to employees_url
+  end
+
+  private
+
+    def employee_params
+      params.require(:employee).permit(:name, :netID, :password, :password_confirmation)
+    end
+
+    # Before filters
+
+    def correct_employee
+      @employee = Employee.find(params[:id])
+      # This needs to be changed when Events are added
+      redirect_to(root_url) unless current_employee?(@employee)
+    end
+
+    def exec
+      redirect_to(root_url) unless current_employee.exec?
+    end
+end

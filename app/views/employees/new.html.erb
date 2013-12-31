@@ -1,0 +1,22 @@
+<% provide(:title, 'New employee') %>
+<h1>Add a new employee to the system</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@employee) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :netID %>
+    <%= f.text_field :netID %>
+
+    <%= f.hidden_field :password, value: "watchers123" %>
+    <%= f.hidden_field :password_confirmation, value: "watchers123" %>
+
+    <%= f.submit "Add employee", class: "btn btn-large btn-primary" %>
+  <% end %>
+  </div>
+</div>
