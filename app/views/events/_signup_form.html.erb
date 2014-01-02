@@ -1,0 +1,7 @@
+<div id="signup_form">
+  <% if current_employee.signed_up?(@event) %>
+    <%= render 'cancel' %>
+  <% else %>
+    <%= render 'signup' %>
+  <% end %>
+</div>

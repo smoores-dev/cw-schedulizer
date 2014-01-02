@@ -26,7 +26,7 @@ class EmployeesController < ApplicationController
     if @employee.update_attributes(employee_params)
       flash[:success] = "Password updated"
     end
-    redirect_to 'edit'
+    render 'edit'
   end
 
   def destroy

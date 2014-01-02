@@ -1,0 +1,10 @@
+<% @event = Event.find(params[:id]) %>
+<% provide(:title, @event.place) %>
+<div class="row">
+  <div class="span8">
+    <%= @event.place %>
+    <%= @event.date %>
+    <%= @event.start %>
+    <%= render 'signup_form' %>
+  </div>
+</div>

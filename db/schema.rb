@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231220849) do
+ActiveRecord::Schema.define(version: 20140102003740) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -28,6 +28,27 @@ ActiveRecord::Schema.define(version: 20131231220849) do
 
   add_index "employees", ["netID"], name: "index_employees_on_netID", unique: true
   add_index "employees", ["remember_token"], name: "index_employees_on_remember_token"
+
+  create_table "event_employees", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "employee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_employees", ["employee_id"], name: "index_event_employees_on_employee_id"
+  add_index "event_employees", ["event_id", "employee_id"], name: "index_event_employees_on_event_id_and_employee_id", unique: true
+  add_index "event_employees", ["event_id"], name: "index_event_employees_on_event_id"
+
+  create_table "events", force: true do |t|
+    t.string   "place"
+    t.date     "date"
+    t.time     "start"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["date"], name: "index_events_on_date"
 
   create_table "users", force: true do |t|
     t.string   "name"

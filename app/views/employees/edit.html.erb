@@ -1,0 +1,18 @@
+<% provide(:title, "Change password") %>
+<h1>Change your password</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@employee) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :password, "New password" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirm new password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

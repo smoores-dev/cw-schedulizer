@@ -1,6 +1,8 @@
 Schedulizer::Application.routes.draw do
+  resources :events
   resources :employees
   resources :sessions, only: [:new, :create, :destroy]
+  resources :event_employees, only: [:create, :destroy]
   root 'static_pages#home'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

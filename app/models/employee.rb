@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+  has_many :event_employees, foreign_key: "employee_id", dependent: :destroy
+  has_many :events, through: :event_employees, source: :event
   has_secure_password
   before_save { netID.downcase! }
   before_create :create_remember_token
@@ -12,6 +14,18 @@ class Employee < ActiveRecord::Base
 
   def Employee.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def signed_up?(event)
+    event_employees.find_by(event_id: event.id)
+  end
+
+  def signup!(event)
+    event_employees.create!(event_id: event.id)
+  end
+
+  def cancel!(event)
+    event_employees.find_by(event_id: event.id).destroy!
   end
 
   private

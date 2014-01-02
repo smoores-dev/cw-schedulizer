@@ -6,10 +6,13 @@
     <% else %>
       <ul>
         <li><%= link_to "Logout", signout_path, method: "delete" %></li>
+        <li><%= link_to "Change your password", edit_employee_path(current_employee) %></li>
         <% if current_employee.exec? %>
           <li><%= link_to "Add employee", new_employee_path %></li>
           <li><%= link_to "View all employees", employees_path %></li>
+          <li><%= link_to "Add event", new_event_path %></li>
         <% end %>
+        <li><%= link_to "See posted events", events_path %></li>
       </ul>
     <% end %>
   </div>

@@ -1,0 +1,22 @@
+<% provide(:title, 'New Event') %>
+<h1>Add a new event</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@event) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :place %>
+    <%= f.text_field :place %>
+
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :start %>
+    <%= f.time_field :start %>
+
+    <%= f.submit "Add event", class: "btn btn-large btn-primary" %>
+  <% end %>
+  </div>
+</div>

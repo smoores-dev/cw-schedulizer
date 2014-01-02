@@ -1,0 +1,7 @@
+<li>
+  <%= link_to event.place, edit_event_path(event.id) %>
+  <%= event.date %>
+  <% if current_employee.exec? %>
+    | <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
