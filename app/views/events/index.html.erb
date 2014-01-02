@@ -1,6 +1,11 @@
-<% provide(:title, 'All employees') %>
+<% provide(:title, 'All events') %>
+<% @events = Event.paginate(page: params[:page]) %>
 <h1>All posted events</h1>
+
+<% will_paginate %>
 
 <ul class="events">
   <%= render @events %>
 </ul>
+
+<% will_paginate %>

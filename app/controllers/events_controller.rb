@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   # before_action :exec, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.paginate(page: params[:page])
   end
 
   def new
