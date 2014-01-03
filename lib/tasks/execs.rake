@@ -5,7 +5,8 @@ namespace :db do
                      netID: "swm85",
                      password: "password",
                      password_confirmation: "password",
-                     exec: true)
+                     exec: true,
+                     webmaster: true)
     Employee.create!(name: "Eric Silverberg",
                      netID: "ews56",
                      password: "password",

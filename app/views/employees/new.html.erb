@@ -16,6 +16,12 @@
     <%= f.hidden_field :password, value: "watchers123" %>
     <%= f.hidden_field :password_confirmation, value: "watchers123" %>
 
+    <% if current_employee.webmaster? %>
+      <br>Admin?
+      <%= f.radio_button :exec, :true %>
+      <br>
+    <% end %>
+    <br>
     <%= f.submit "Add employee", class: "btn btn-large btn-primary" %>
   <% end %>
   </div>

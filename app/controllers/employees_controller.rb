@@ -38,7 +38,7 @@ class EmployeesController < ApplicationController
   private
 
     def employee_params
-      params.require(:employee).permit(:name, :netID, :password, :password_confirmation)
+      params.require(:employee).permit(:name, :netID, :password, :password_confirmation, :exec)
     end
 
     # Before filters

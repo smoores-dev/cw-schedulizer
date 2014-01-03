@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103022028) do
+ActiveRecord::Schema.define(version: 20140103043454) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140103022028) do
     t.boolean  "exec",                  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "webmaster",             default: false
   end
 
   add_index "employees", ["netID"], name: "index_employees_on_netID", unique: true
