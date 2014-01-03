@@ -1,11 +1,8 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "bootstrap";
 
-@charset "UTF-8";
-/* CSS Document */
+// variables and mixins
+
+$transWhite: rgba(255,255,255,0.95);
 
 @mixin box_sizing {
   -maz-box-sizing: border-box;
@@ -15,18 +12,18 @@
 
 @font-face { 
   font-family: Bellerose; 
-  src: asset-url(Bellerose); 
-}
-@font-face { 
-  font-family: Bigmouth; 
-  src: asset-url(Bigmouth-Regular); 
-}
-@font-face { 
-  font-family: Bigmouth-Bold; 
-  src: asset-url(Bigmouth-Bold); 
+  src: font-url('Bellerose.ttf'); 
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face { font-family: Engel; 
-  src: asset-url(EngelLight_ltd); 
+  src: font-url('EngelLight_ltd.ttf'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 #login {
@@ -38,6 +35,9 @@
   border: thin black solid;
   padding: 20px;
   box-shadow: 2px 2px 2px #252525;
+  ul {
+    list-style: none;
+  }
 }
 
 h1, h2 {
@@ -45,17 +45,21 @@ h1, h2 {
 }
 
 hr {
+  margin-top: -1px;
+  width:90%;
   background-color: white;
+  color: #990000;
+  border-style: inset;
+  border-width: 1px;
 }
 
 body {
-  /*background: url(../images/background.jpg);*/
+  padding-top: 30px;
   background-color: #6B0000;
 }
 
 #container {
   font-family: Engel;
-  /*background-color:#EBC3AB;*/
   width:1200px;
   font-size:medium;
   margin:0px;
@@ -81,6 +85,9 @@ header {
     margin-left: 250px;
     padding-bottom: 20px;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 a {
@@ -92,7 +99,6 @@ nav {
   width: 70%;
   margin-right: auto;
   margin-left: 180px;
-  font-family: Engel;
   ul {
     list-style: none;
     position: relative;
@@ -111,10 +117,10 @@ nav {
 }
 
 #content {
-  background-image:url(../images/CW-Background.png);
+  background-image:image-url('CW-Background.png');
   background-repeat:no-repeat;
   background-color:#F1F1F1;
-    background-position:center top;
+  background-position:center top;
   padding-bottom: 150px;
   width:1000px;
   padding-top:20px;
@@ -124,7 +130,7 @@ nav {
   box-shadow: 8px 8px 8px black;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-    /*height: 950px;*/
+  min-height: 950px;
 }
 
 #mission {
@@ -143,18 +149,18 @@ nav {
   display:table;
   border-spacing: 30px;
   border: #666 thin solid;
-    background-color:white;
+  background-color:white;
   background-color:rgba(255,255,255,0.75);
   margin-right: 40px;
   margin-left: 40px;
   font-size:110%;
 }
 
-#first {
+.right-box {
   margin-right:250px;
 }
 
-#second {
+.left-box {
   margin-left:250px;
 }
 
@@ -169,7 +175,6 @@ aside {
   padding-top:0;
   background-color:rgba(255,255,255,0.95);
   border: #666 thin solid;
-  font-family: Engel;
   box-shadow: 3px 3px 3px #252525;
   p {
     font-size:120%;
@@ -177,6 +182,113 @@ aside {
   a {
     font-weight:bold;
   }
+}
+
+// index page
+
+#banner {
+  margin-left: 30px;
+  border: thin black solid;
+}
+
+#cloud {
+  h1{
+    margin: 0;
+  }
+  margin: 40px;
+  padding: 30px;
+  padding-top: 0;
+  background-color:$transWhite;
+  border: #666 thin solid;
+}
+
+// about page
+
+#news_title {
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+#accordion {
+  padding: 10px;
+  width: 700px;
+  h3 {
+    background-color: $transWhite;
+    border: solid medium $grayLight;
+    padding: 10px;
+    margin-bottom: 0;
+  }
+  div {
+    background-color: $transWhite;
+    border: solid medium $grayLight;
+    border-top: none;
+    padding: 10px;
+  }
+  a { 
+    font-weight: bold;
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+#request {
+  margin-right:auto;
+  margin-left: 100px;
+  font-size:175%;
+}
+
+#table {
+  display: table;
+  border-spacing: 40px;
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.tableRow {
+  display: table-row;
+  height: 250px;
+}
+
+.tableCell {
+  vertical-align: top;
+  display: table-cell;
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+  border: #666 thin solid;
+  background-color:rgba(100,100,100,0.15);
+  padding:5px;
+  img {
+    padding:5px;
+    border: #666 thin solid;
+    background-color: white;
+  }
+  h2, h3 {
+    margin:5px;
+    text-align:center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.empty {
+  background-color:transparent;
+  border:none;
+}
+
+#meet {
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+// services
+
+#working_title {
+  margin-left: 30px;
 }
 
 .debug_dump {
