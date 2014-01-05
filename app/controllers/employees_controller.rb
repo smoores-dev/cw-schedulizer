@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   before_action :exec, only: [:index, :new, :destroy]
 
   def index
-    @employees = Employee.paginate(page: params[:page])
+    @employees = Employee.paginate(page: params[:page], per_page: 15)
   end
 
   def new
@@ -38,7 +38,8 @@ class EmployeesController < ApplicationController
   private
 
     def employee_params
-      params.require(:employee).permit(:name, :netID, :password, :password_confirmation, :exec)
+      params.require(:employee).permit(:name, :netID, :password, 
+                                       :password_confirmation, :exec)
     end
 
     # Before filters
