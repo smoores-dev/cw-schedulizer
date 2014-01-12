@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112053318) do
+ActiveRecord::Schema.define(version: 20140112074830) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -58,14 +58,14 @@ ActiveRecord::Schema.define(version: 20140112053318) do
 
   create_table "news_stories", force: true do |t|
     t.string   "title"
-    t.string   "snippet"
+    t.text     "snippet",    limit: 255
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "testimonials", force: true do |t|
-    t.string   "content"
+    t.text     "content",    limit: 255
     t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
