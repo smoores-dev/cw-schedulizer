@@ -1,23 +1,28 @@
-<div id="accordion">
-  <h3><a href="#">Cornell Chronicle</a></h3>
-  <div>
-    <h4>Cayuga's Watchers aim for friendly intervention</h4>
-          <p>
-  Arriving on campus her freshman year, Maria (not her real name) was struck by the number of
-          parties that included alcohol. Now a sophomore, Maria is a charter member of the student-run 
-          organization Cayuga's Watchers, which sends peer intervention teams to parties...
-          <a href="http://www.news.cornell.edu/stories/2013/11/cayugas-watchers-aim-friendly-intervention">Want to read the full article?</a>
-    </p>
+<% @stories = NewsStory.all %>
+
+<% if @stories.any? %>
+  <h1 id="news_title">Cayuga's Watchers in the News</h1>
+  <div id="accordion">
+    <% @stories.each do |story| %>
+    <h3>
+      <%= link_to story.title, "#" %>
+      <% if signed_in? && current_employee.exec? %>
+        | <%= link_to "delete", story, method: :delete, 
+                data: { confirm: "You sure?" } %>
+      <% end %>
+    </h3>
+    <div>
+      <p>
+        <%= story.snippet %>... 
+        <%= link_to "Want to read the full article?", story.url %>
+      </p>
+    </div>
+    <% end %>
   </div>
-  <h3><a href="#">Cornell Daily Sun</a></h3>
-  <div>
-    <p>
-      After several months of jumping through logistical hurdles, Cayuga's Watchers — a 
-              student run campaign that aims to combat high-risk drinking through bystander intervention — 
-              will officially launch next month. <br>
-    University-affiliated organizations can employ students who have been trained as Cayuga's Watchers 
-              at events to recognize signs of excessive intoxication in attendees and seek appropriate assistance... 
-              <a href="http://cornellsun.com/blog/2013/09/26/cayugas-watchers-to-launch-in-october/">Want to read the full article?</a>
-    </p>
+<% end %>
+<% if signed_in? && current_employee.exec? %>
+  <div class="add span2">
+    <%= link_to "Add new story?", new_news_story_path %>
   </div>
-</div>
+  <br><br>
+<% end %>

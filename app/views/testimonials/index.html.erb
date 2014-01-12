@@ -1,0 +1,27 @@
+<% if @testimonials.any? %>
+  <% @testimonials.each do |testimonial| %>
+    <div class="infoBox left-box">
+      <%= testimonial.content %>
+      <br><br>
+      - <%= testimonial.author %>
+      <% if signed_in? && current_employee.exec? %>
+        | <%= link_to "delete", testimonial, method: :delete, 
+                data: { confirm: "You sure?" } %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <% provide(:title, 'Testimonials') %>
+  <h1>Be the First!</h1>
+  <div class="infoBox" id="first">
+      <p>Be the first to write us a glowing review! Hire us for your next event and see for yourself what a relief it is to have a team of trained Watchers making sure
+      all of your party-goers are safe and the party runs smoothly. Fill out an 
+      <em><a href="https://docs.google.com/a/cayugaswatchers.org/spreadsheet/viewform?formkey=dG9QWkVSQ0paMkhtekVRWmxHcm5Xd1E6MQ#gid=0">Event Request Form</a>
+      </em>and keep the party going!</p>
+  </div>
+<% end %>
+<% if signed_in? && current_employee.exec? %>
+  <div class="row">
+    <div class="add span2 offset5 "><%= link_to "Add new testimonial?", new_testimonial_path %></div>
+  </div>
+<% end %>

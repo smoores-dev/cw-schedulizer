@@ -3,7 +3,8 @@ Schedulizer::Application.routes.draw do
   resources :employees
   resources :sessions, only: [:new, :create, :destroy]
   resources :event_employees, only: [:create, :destroy]
-  # resources :contact, only: [:new, :create]
+  resources :news_stories
+  resources :testimonials
   root 'static_pages#home'
   match '/contact', to: 'contact#new', via: 'get'
   match '/contact', to: 'contact#create', via: 'post'
@@ -11,7 +12,6 @@ Schedulizer::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/apply', to: 'static_pages#apply', via: 'get'
-  # match '/contact', to: 'contact#new', via: 'get'
   match '/testimonials', to: 'static_pages#testimonials', via: 'get'
   match '/services', to: 'static_pages#services', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.

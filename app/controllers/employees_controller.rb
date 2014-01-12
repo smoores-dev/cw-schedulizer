@@ -46,7 +46,6 @@ class EmployeesController < ApplicationController
 
     def correct_employee
       @employee = Employee.find(params[:id])
-      # This needs to be changed when Events are added
       redirect_to(root_url) unless current_employee?(@employee)
     end
 

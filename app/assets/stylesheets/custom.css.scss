@@ -341,6 +341,13 @@ aside {
   background-color: $transWhite;
 }
 
+.add {
+  margin-top: 10px;
+  padding: 5px;
+  border: solid medium $grayLight;
+  background-color: $transWhite;
+}
+
 .debug_dump {
   clear: both;
   float: left;
