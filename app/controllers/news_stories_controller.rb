@@ -1,4 +1,6 @@
 class NewsStoriesController < ApplicationController
+  before_action :exec, only: [:new, :create, :destroy]
+  
   def new
     @news_story = NewsStory.new
   end

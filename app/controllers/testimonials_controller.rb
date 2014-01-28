@@ -1,4 +1,5 @@
 class TestimonialsController < ApplicationController
+  before_action :exec, only: [:new, :create, :destroy]
 
   def new
     @testimonial = Testimonial.new

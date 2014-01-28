@@ -49,7 +49,4 @@ class EmployeesController < ApplicationController
       redirect_to(root_url) unless current_employee?(@employee)
     end
 
-    def exec
-      redirect_to(root_url) unless current_employee.exec?
-    end
 end
