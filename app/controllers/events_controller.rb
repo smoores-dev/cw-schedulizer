@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :signed_in_employee
-  before_action :exec, only: [:new, :create, :edit, :update, :destroy]
+  before_action :exec, only: [:new, :create, :destroy]
 
   def index
     @events = Event.paginate(page: params[:page])
