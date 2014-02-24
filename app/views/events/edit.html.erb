@@ -4,16 +4,20 @@
 <% if current_employee.exec? %>
   <div class="row">
     <div class="event offset2">
-      <h2><%= @event.place %></h2>
-      <h3><%= @event.date.strftime("%B %e") %></h3>
-      <h3><%= @event.start.strftime("%l:%M") %></h3>
-      <% if @event.event_employees.any? %>
-        <h4>Able to work:</h4>
-      <% end %>
-      <% @event.event_employees.each do |e| %>
-        <h4>
-          <%= e.employee.name %>
-        </h4>
+      <%= form_for(@event) do |f| %>
+
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :place %>
+        <%= f.text_field :place %>
+
+        <%= f.label :date %>
+        <%= f.date_field :date %>
+
+        <%= f.label :start %>
+        <%= f.time_field :start %>
+
+        <%= f.submit "Update event", class: "btn btn-large btn-primary" %>
       <% end %>
     </div>
   </div>

@@ -2,6 +2,9 @@
 <% provide(:style, 'contact.css.scss') %>
 <h1>Get in touch</h1>
 <div class="infoBox" id="first">
+  <h3>Want to request the Watchers at your event? Fill out an 
+    <%= link_to "event request form!", "https://docs.google.com/a/cayugaswatchers.org/spreadsheet/viewform?formkey=dG9QWkVSQ0paMkhtekVRWmxHcm5Xd1E6MQ#gid=0" %></h3>
+    <br>
   <form action="scripts/feedback.php" method="post">
     <label for="tswname">Name:</label>
       <input type="text" name="fullname" id="tswname" size="25" /><br>

@@ -1,0 +1,18 @@
+<% @event = Event.find(params[:id]) %>
+<% provide(:title, @event.place) %>
+
+<div class="row">
+  <div class="event offset2">
+    <h2><%= @event.place %></h2>
+    <h3><%= @event.date.strftime("%B %e") %></h3>
+    <h3><%= @event.start.strftime("%l:%M") %></h3>
+    <% if @event.event_employees.any? %>
+      <h4>Able to work:</h4>
+    <% end %>
+    <% @event.event_employees.each do |e| %>
+      <h4>
+        <%= e.employee.name %>
+      </h4>
+    <% end %>
+  </div>
+</div>

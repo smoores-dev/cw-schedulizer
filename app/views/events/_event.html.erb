@@ -1,7 +1,13 @@
 <li>
-  <%= link_to event.place, edit_event_path(event.id) %>
+  <% if current_employee.exec? %>
+    <% approp_path = event %>
+  <% else %>
+    <% approp_path = edit_event_path(event.id) %>
+  <% end %>
+  <%= link_to event.place, approp_path %>
   <%= event.date.strftime("%B %e") %>
   <% if current_employee.exec? %>
+    | <%= link_to "edit", edit_event_path(event.id) %>
     | <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
 </li>
