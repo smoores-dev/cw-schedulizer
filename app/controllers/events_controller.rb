@@ -22,10 +22,11 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
       flash[:success] = "Event updated"
     end
-    render 'edit'
+    render 'index'
   end
 
   def destroy
