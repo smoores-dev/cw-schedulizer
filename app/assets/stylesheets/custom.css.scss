@@ -200,8 +200,6 @@ aside {
 #accordion {
   padding: 10px;
   width: 60%;
-  height: 60px;
-  overflow: hidden;
   h3 {
     background-color: $transWhite;
     border: solid thin $grayLight;
@@ -210,6 +208,8 @@ aside {
     font-size: 150%;
   }
   div {
+    height: 60px;
+    overflow: hidden;
     background-color: $transWhite;
     border: solid medium $grayLight;
     border-top: none;
