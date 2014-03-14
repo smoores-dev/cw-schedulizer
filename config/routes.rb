@@ -5,6 +5,7 @@ Schedulizer::Application.routes.draw do
   resources :event_employees, only: [:create, :destroy]
   resources :news_stories
   resources :testimonials
+  resources :test
   root 'static_pages#home'
   match '/contact', to: 'contact#new', via: 'get'
   match '/contact', to: 'contact#create', via: 'post'

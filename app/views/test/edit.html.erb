@@ -1,0 +1,19 @@
+<% @test = Test.find(1) %>
+<%= form_for(@test) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <% if @test.testingPeriod %>
+    <%= f.hidden_field :link, value: "yahoo.com" %>
+    <%= f.hidden_field :testingPeriod, value: false %>
+
+    <%= f.submit "End Testing", class: "btn btn-large" %>
+
+  <% else %>
+    <%= f.hidden_field :link, value: "google.com" %>
+    <%= f.hidden_field :testingPeriod, value: true %>
+
+    <%= f.submit "Begin Testing", class: "btn btn-primary btn-large" %>
+
+  <% end %>
+<% end %>

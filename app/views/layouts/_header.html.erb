@@ -1,3 +1,5 @@
+<% @test = Test.find(1) %>
+
 <header>
   <%= image_tag("CW Logo.png") %>
   <div id="login">
@@ -16,16 +18,42 @@
       </ul>
     <% end %>
   </div>
-  <nav>
-    <hr>
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Services", services_path %></li>
-      <li><%= link_to "Testimonials", testimonials_path %></li>
-      <li><%= link_to "Apply Now", apply_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-    </ul>
-    <hr>
+  <nav class="nav nav-tabs">
+      <li 
+        <% if yield(:title) == "Cayugas Watchers" %>
+          class="active"
+        <% end %>
+          ><%= link_to "Home", root_path %></li>
+      <li 
+        <% if yield(:title) == "About" %>
+          class="active"
+        <% end %>
+          ><%= link_to "About", about_path %></li>
+      <li 
+        <% if yield(:title) == "Services" %>
+          class="active"
+        <% end %>
+          ><%= link_to "Services", services_path %></li>
+      <li 
+        <% if yield(:title) == "Testimonials" %>
+          class="active"
+        <% end %>
+          ><%= link_to "Testimonials", testimonials_path %></li>
+      <li 
+        <% if yield(:title) == "Apply" %>
+          class="active"
+        <% end %>
+          ><%= link_to "Apply Now", apply_path %></li>
+      <li 
+        <% if yield(:title) == "Contact Us" %>
+          class="active"
+        <% end %>
+          ><%= link_to "Contact", contact_path %></li>
+      <% if signed_in? && !current_employee.exec? %>
+        <li><%= link_to "Testing", @test.link %></li>
+      <% elsif signed_in? && current_employee.exec? %>
+        <li><%= link_to "Testing", edit_test_path(@test) %></li>
+
+      <% end %>
   </nav>
 </header>

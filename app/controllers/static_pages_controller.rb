@@ -16,4 +16,7 @@ class StaticPagesController < ApplicationController
 
   def services
   end
+
+  def testing
+  end
 end

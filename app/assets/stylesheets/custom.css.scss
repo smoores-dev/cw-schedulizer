@@ -48,15 +48,6 @@ h1, h2 {
   font-family:Bellerose;
 }
 
-hr {
-  margin-top: -1px;
-  width:90%;
-  background-color: white;
-  color: #990000;
-  border-style: inset;
-  border-width: 1px;
-}
-
 body {
   padding-top: 30px;
   background-color: #6B0000;
@@ -64,9 +55,9 @@ body {
 }
 
 #container {
-  font-family: Engel;
-  width:1200px;
-  font-size:medium;
+  // font-family: Engel;
+  // width:1200px;
+  font-size:80%;
   margin:0px;
   margin-left:auto;
   margin-right:auto;
@@ -74,7 +65,7 @@ body {
 
 header {
   background-color:#F1F1F1;
-  width:1000px;
+  width:900px;
   margin:0px;
   margin-right:auto;
   margin-left:auto;
@@ -86,8 +77,8 @@ header {
   img {
     margin-top:20px;
     width:50%;
-    margin-right: 250px;
-    margin-left: 250px;
+    margin-right: 25%;
+    margin-left: 25%;
     padding-bottom: 20px;
   }
   a:hover {
@@ -100,24 +91,13 @@ a {
   color:black;
 }
 
-nav {
-  width: 70%;
-  margin-right: auto;
-  margin-left: 180px;
-  ul {
-    list-style: none;
-    position: relative;
-    display: inline-table;
-    li {
-      float: left;
-      a {
-        padding: 2px;
-        margin: 18px;
-        &:hover {
-          color:white;
-        }
-      }
-    }
+.nav {
+  font-size: medium;
+  text-align: center;
+  li {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
@@ -127,7 +107,7 @@ nav {
   background-color:#F1F1F1;
   background-position:center top;
   padding-bottom: 150px;
-  width:1000px;
+  width:900px;
   padding-top:20px;
   margin-right:auto;
   margin-left:auto;
@@ -219,12 +199,15 @@ aside {
 
 #accordion {
   padding: 10px;
-  width: 700px;
+  width: 60%;
+  height: 60px;
+  overflow: hidden;
   h3 {
     background-color: $transWhite;
-    border: solid medium $grayLight;
+    border: solid thin $grayLight;
     padding: 10px;
     margin-bottom: 0;
+    font-size: 150%;
   }
   div {
     background-color: $transWhite;

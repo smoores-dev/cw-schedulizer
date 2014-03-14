@@ -15,8 +15,9 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
     if @employee.save
       flash[:success] = "Employee added to the system."
+      redirect_to new_employee_path
     end
-    render 'new'
+    
   end
 
   def edit
