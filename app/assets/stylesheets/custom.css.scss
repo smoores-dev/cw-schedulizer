@@ -201,6 +201,8 @@ aside {
   padding: 10px;
   width: 60%;
   h3 {
+    height: 40px;
+    overflow: hidden;
     background-color: $transWhite;
     border: solid thin $grayLight;
     padding: 10px;
@@ -208,8 +210,7 @@ aside {
     font-size: 150%;
   }
   div {
-    height: 60px;
-    overflow: hidden;
+
     background-color: $transWhite;
     border: solid medium $grayLight;
     border-top: none;
