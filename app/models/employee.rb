@@ -8,6 +8,8 @@ class Employee < ActiveRecord::Base
   validates :netID, presence: true, uniqueness: { case_sensative: false }
   validates :password, length: { minimum: 6 }
 
+  default_scope order: 'employees.name ASC'
+
   def Employee.new_remember_token
     SecureRandom.urlsafe_base64
   end
