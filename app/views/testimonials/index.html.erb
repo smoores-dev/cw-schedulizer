@@ -1,3 +1,4 @@
+<% provide(:title, 'Testimonials') %>
 <% if @testimonials.any? %>
   <% @testimonials.each do |testimonial| %>
     <div class="infoBox left-box">
@@ -11,7 +12,6 @@
     </div>
   <% end %>
 <% else %>
-  <% provide(:title, 'Testimonials') %>
   <h1>Be the First!</h1>
   <div class="infoBox" id="first">
       <p>Be the first to write us a glowing review! Hire us for your next event and see for yourself what a relief it is to have a team of trained Watchers making sure
