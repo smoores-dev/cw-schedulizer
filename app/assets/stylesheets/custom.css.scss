@@ -29,11 +29,11 @@ html {
 #login {
   position: absolute;
   left: 0px;
-  top: 100px;
-  width: 200px;
+  top: 30px;
+  width: 150px;
   background-color: white;
   border: thin black solid;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 2px 2px 2px #252525;
   ul {
     list-style: none;
@@ -153,13 +153,12 @@ a {
 }
 
 aside {
-  float: right;
+  position: absolute;
+  right:0;
   width: 250px;
-  margin-right:auto;
-  margin-left:auto;
-  margin-top:40px;
-  padding: 30px;
-  padding-bottom:50px;
+  top:240px;
+  padding: 20px;
+  padding-bottom:30px;
   padding-top:0;
   background-color:rgba(255,255,255,0.95);
   border: #666 thin solid;
