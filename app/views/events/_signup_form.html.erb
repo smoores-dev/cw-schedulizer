@@ -1,5 +1,6 @@
 <div id="signup_form">
   <% if current_employee.signed_up?(@event) %>
+    <p>Thanks for letting us know you're availability! If you're selected to work this event, we will notify you by email on the day of the event (or earlier if possible).</p>
     <%= render 'cancel' %>
   <% else %>
     <%= render 'signup' %>
