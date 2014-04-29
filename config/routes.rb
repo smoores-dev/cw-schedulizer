@@ -3,18 +3,10 @@ Schedulizer::Application.routes.draw do
   resources :employees
   resources :sessions, only: [:new, :create, :destroy]
   resources :event_employees, only: [:create, :destroy]
-  resources :news_stories
-  resources :testimonials
   resources :test
-  root 'static_pages#home'
-  match '/contact', to: 'contact#new', via: 'get'
-  match '/contact', to: 'contact#create', via: 'post'
+  root 'events#index'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/apply', to: 'static_pages#apply', via: 'get'
-  match '/testimonials', to: 'static_pages#testimonials', via: 'get'
-  match '/services', to: 'static_pages#services', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

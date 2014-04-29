@@ -2,60 +2,43 @@
 
 <header>
   <%= image_tag("CW Logo.png") %>
-  <div id="login">
-    <% unless signed_in? %>
-      Already an employee? <%= link_to "Login here", signin_path %>
-    <% else %>
-      <ul>
-        <li><%= link_to "Logout", signout_path, method: "delete" %></li>
-        <% if current_employee.netID != 'test123' %>
-          <li><%= link_to "Change your password", edit_employee_path(current_employee) %></li>
-          <% if current_employee.exec? %>
-            <li><%= link_to "Add employee", new_employee_path %></li>
-            <li><%= link_to "View all employees", employees_path %></li>
-            <li><%= link_to "Add event", new_event_path %></li>
+  <% if signed_in? %>
+    <nav class="nav nav-tabs">
+      <% if current_employee.netID != 'test123' %>
+        <li 
+          <% if yield(:title) == "All events" %>
+            class="active"
           <% end %>
-          <li><%= link_to "See posted events", events_path %></li>
+            ><%= link_to "Events", events_path %></li>
+        <% if current_employee.exec? %>
+          <li 
+            <% if yield(:title) == "All employees" %>
+              class="active"
+            <% end %>
+              ><%= link_to "Employees", employees_path %></li>
+          <li 
+            <% if yield(:title) == "New Event" %>
+              class="active"
+            <% end %>
+              ><%= link_to "Add Event", new_event_path %></li>
+          <li 
+            <% if yield(:title) == "New employee" %>
+              class="active"
+            <% end %>
+              ><%= link_to "Add Employee", new_employee_path %></li>
         <% end %>
-      </ul>
-    <% end %>
-  </div>
-  <nav class="nav nav-tabs">
-      <li 
-        <% if yield(:title) == "Cayugas Watchers" %>
-          class="active"
-        <% end %>
-          ><%= link_to "Home", root_path %></li>
-      <li 
-        <% if yield(:title) == "About" %>
-          class="active"
-        <% end %>
-          ><%= link_to "About", about_path %></li>
-      <li 
-        <% if yield(:title) == "Services" %>
-          class="active"
-        <% end %>
-          ><%= link_to "Services", services_path %></li>
-      <li 
-        <% if yield(:title) == "Testimonials" %>
-          class="active"
-        <% end %>
-          ><%= link_to "Testimonials", testimonials_path %></li>
-      <li 
-        <% if yield(:title) == "Apply" %>
-          class="active"
-        <% end %>
-          ><%= link_to "Apply Now", apply_path %></li>
-      <li 
-        <% if yield(:title) == "Contact Us" %>
-          class="active"
-        <% end %>
-          ><%= link_to "Contact", contact_path %></li>
+        <li 
+          <% if yield(:title) == "Change password" %>
+            class="active"
+          <% end %>
+            ><%= link_to "Change Password", edit_employee_path(current_employee) %></li>
+      <% end %>
       <% if signed_in? && !current_employee.exec? %>
         <li><%= link_to "Testing", @test.link %></li>
       <% elsif signed_in? && current_employee.exec? %>
         <li><%= link_to "Testing", edit_test_path(@test) %></li>
-
       <% end %>
-  </nav>
+      <li><%= link_to "Log out", signout_path, method:"delete" %>
+    </nav>
+  <% end %>
 </header>

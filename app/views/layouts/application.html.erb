@@ -13,7 +13,6 @@
 <body>
   <div id="container">
     <%= render 'layouts/header' %>
-    <%= render 'layouts/sidebar' %>
     <div id="content">
       <% flash.each do |key,value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>

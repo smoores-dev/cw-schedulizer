@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :signed_in_employee
   before_action :exec, only: [:new, :create, :destroy]
+  before_action :not_testing
 
   def index
     @events = Event.paginate(page: params[:page])
@@ -43,6 +44,12 @@ class EventsController < ApplicationController
 
     def event_params
       params.require(:event).permit(:place, :date, :start)
+    end
+
+    def not_testing
+      if current_employee.netID == 'test123'
+        redirect_to '/test#index'
+      end
     end
 
 end
