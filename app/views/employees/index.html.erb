@@ -4,7 +4,7 @@
 <%= will_paginate %>
 
 <ul class="employees">
-  <%= render @employees %>
+  <%= render @employees.order('name ASC') %>
 </ul>
 
 <%= will_paginate %>
