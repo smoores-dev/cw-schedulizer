@@ -22,12 +22,13 @@
     </div>
   </div>
 <% else %>
-  <div class="row">
-    <div class="event offset2">
-      <h2><%= @event.place %></h2>
-      <h3><%= @event.date.strftime("%B %e") %></h3>
-      <h3><%= @event.start.strftime("%l:%M") %></h3>
-      <%= render 'signup_form' %>
-    </div>
+  <% if Time.new.hour - @event.start.hour > 1 %>
+    <div class="row">
+      <div class="event offset2">
+        <h2><%= @event.place %></h2>
+        <h3><%= @event.date.strftime("%B %e") %></h3>
+        <h3><%= @event.start.strftime("%l:%M") %></h3>
+        <%= render 'signup_form' %>
+      </div>
   </div>
 <% end %>

@@ -6,7 +6,7 @@
 
 <% if @events.any? %>
   <ul class="events">
-    <%= render @events %>
+    <%= render @events.order('name ASC') %>
   </ul>
 <% else %>
   <div class="events">Nothing posted currently, check back soon!</div>

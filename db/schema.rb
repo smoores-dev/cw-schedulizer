@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314042154) do
+ActiveRecord::Schema.define(version: 20140711065351) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140314042154) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "webmaster",             default: false
+    t.string   "phone_number"
   end
 
   add_index "employees", ["netID"], name: "index_employees_on_netID", unique: true
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 20140314042154) do
     t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "check_in"
+    t.datetime "check_out"
   end
 
   add_index "event_employees", ["employee_id"], name: "index_event_employees_on_employee_id"
@@ -47,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140314042154) do
     t.time     "start"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
   add_index "events", ["date"], name: "index_events_on_date"

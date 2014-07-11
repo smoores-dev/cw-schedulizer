@@ -7,6 +7,15 @@ Schedulizer::Application.routes.draw do
   root 'events#index'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  get '/api/events', to: API::EventsAPIController.action(:index)
+  post '/api/events/destroy', to: API::EventsAPIController.action(:destroy)
+  post '/api/events/create', to: API::EventsAPIController.action(:create)
+  post '/api/events/update', to: API::EventsAPIController.action(:update)
+  get '/api/event_employees', to: API::EventEmployeesAPIController.action(:index)
+  post '/api/event_employees/destroy', to: API::EventEmployeesAPIController.action(:destroy)
+  post '/api/event_employees/create', to: API::EventEmployeesAPIController.action(:create)
+  post '/api/event_employees/update', to: API::EventEmployeesAPIController.action(:update)
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

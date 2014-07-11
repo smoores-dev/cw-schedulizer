@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag("application", { media: "all", "data-turbolinks-track" => true }) %>
-  <%= javascript_include_tag("application", { "data-turbolinks-track" => true }) %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <%= csrf_meta_tags %>

@@ -2,7 +2,7 @@ module SessionsHelper
 
   def sign_in(employee)
     remember_token = Employee.new_remember_token
-    cookies.permanent[:remember_token] = remember_token
+    cookies.permanent[:remember_token] = remember_token if cookies
     employee.update_attribute(:remember_token, Employee.encrypt(remember_token))
     self.current_employee = employee
   end
