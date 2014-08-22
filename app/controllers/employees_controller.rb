@@ -47,7 +47,7 @@ class EmployeesController < ApplicationController
 
     def correct_employee
       @employee = Employee.find(params[:id])
-      redirect_to(root_url) unless current_employee?(@employee)
+      redirect_to(root_url) unless current_employee?(@employee) || current_employee.exec?
     end
 
 end

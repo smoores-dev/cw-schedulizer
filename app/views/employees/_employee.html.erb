@@ -1,5 +1,9 @@
 <li>
-  <%= employee.name %>
+  <% if current_employee.exec? %>
+    <%= link_to employee.name, edit_employee_path(employee.id) %>
+  <% else %>
+    <%= employee.name %>
+  <% end %>
   <% if (current_employee.exec? && !employee.exec?) || current_employee.webmaster? && !employee.webmaster? %>
     | <%= link_to "delete", employee, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
