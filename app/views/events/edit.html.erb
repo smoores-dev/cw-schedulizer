@@ -22,7 +22,8 @@
     </div>
   </div>
 <% else %>
-  <% if Time.new.hour - @event.start.hour > 1 %>
+  <% now = Time.new %>
+  <% unless now.day == @event.date.day && now.month == @event.date.month && now.hour - @event.start.hour < 1 %>
     <div class="row">
       <div class="event offset2">
         <h2><%= @event.place %></h2>
