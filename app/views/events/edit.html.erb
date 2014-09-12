@@ -23,7 +23,15 @@
   </div>
 <% else %>
   <% now = Time.new %>
-  <% unless now.day == @event.date.day && now.month == @event.date.month && now.hour - @event.start.hour < 1 %>
+  <% near_event_start = now.day == @event.date.day && now.month == @event.date.month && @event.start.hour - now.hour <= 1 %>
+  <% if near_event_start %>
+    <div class="row">
+      <div class="event offset2">
+        <h2>The team for this event has already been sent out!</h2>
+        <h3>Why don't you check the events page and see there's another event you're available for?</h3>
+      </div>
+    </div>
+  <% else %>
     <div class="row">
       <div class="event offset2">
         <h2><%= @event.place %></h2>
