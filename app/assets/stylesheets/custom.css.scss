@@ -50,7 +50,7 @@ h1, h2 {
 
 body {
   padding-top: 30px;
-  background-color: #6B0000;
+  // background-color: #6B0000;
   // background-color: $grayDarker;
 }
 
@@ -64,16 +64,16 @@ body {
 }
 
 header {
-  background-color:#F1F1F1;
+  // background-color:#F1F1F1;
   width:900px;
   margin:0px;
   margin-right:auto;
   margin-left:auto;
   padding-bottom:5px;
-  border-left: #CCC solid thick;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  box-shadow: 8px 8px 8px black;
+  // border-left: #CCC solid thick;
+  // border-top-left-radius: 30px;
+  // border-top-right-radius: 30px;
+  // box-shadow: 8px 8px 8px black;
   img {
     margin-top:20px;
     width:50%;
@@ -104,17 +104,17 @@ a {
 #content {
   background-image:image-url('CW-Background.png');
   background-repeat:no-repeat;
-  background-color:#F1F1F1;
+  // background-color:#F1F1F1;
   background-position:center top;
   padding-bottom: 150px;
   width:900px;
   padding-top:20px;
   margin-right:auto;
   margin-left:auto;
-  border-left: #CCC solid thick;
-  box-shadow: 8px 8px 8px black;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  // border-left: #CCC solid thick;
+  // box-shadow: 8px 8px 8px black;
+  // border-bottom-left-radius: 30px;
+  // border-bottom-right-radius: 30px;
   min-height: 950px;
 }
 
