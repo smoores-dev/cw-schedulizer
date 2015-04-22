@@ -4,7 +4,7 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <% if @test.testingPeriod %>
-    <%= f.hidden_field :link, value: "https://drive.google.com/file/d/0BzFz-9ar4j2pZWRnY082ZWdWWlZrSXZZY2Z5bU9mVXcyWkhj/edit?usp=sharing" %>
+    <%= f.hidden_field :link, value: "https://drive.google.com/file/d/0B8LaymERwatMcUp6S3NNTGREaTg/view?usp=sharing" %>
     <%= f.hidden_field :testingPeriod, value: false %>
 
     <%= f.submit "End Testing", class: "btn btn-large" %>
