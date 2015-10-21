@@ -1,1 +1,5 @@
-<h1>Click on the link above to continue to the testing area!</h1>
+<% if @test.testingPeriod %>
+  <h1>Click on the link above to continue to the testing area!</h1>
+<% else %>
+  <h1>Click the link above to continue to the refresher slides. Return to this page during your assigned testing period to access the training exam</h1>
+<% end %>
