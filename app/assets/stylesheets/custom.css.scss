@@ -102,7 +102,7 @@ a {
 }
 
 #content {
-  background-image:image-url('transparentNoText.png');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), image-url('transparentNoText.png');
   background-repeat:no-repeat;
   // background-color:#F1F1F1;
   background-position:center top;
